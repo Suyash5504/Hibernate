@@ -7,10 +7,6 @@ import org.hibernate.cfg.Configuration;
 
 import com.model.Student;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )

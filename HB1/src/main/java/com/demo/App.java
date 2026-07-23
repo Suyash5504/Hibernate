@@ -22,6 +22,14 @@ public class App
         s1.setPercentage(90);
         session.save(s1);
         
+        Student s = session.get(Student.class,9);
+        session.delete(s);
+        
+        Student student = session.get(Student.class, 7);
+        student.setPercentage(80.0);
+        session.update(student);
+        
+        
         tx.commit();
         session.close();  
     }

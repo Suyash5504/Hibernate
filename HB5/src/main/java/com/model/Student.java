@@ -1,10 +1,14 @@
 package com.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,7 +24,14 @@ public class Student {
 	private double percentage;
 	@OneToOne
 	private Laptop laptop;
-	
+	@OneToMany(mappedBy = "student")
+	private List<Gift> gift= new LinkedList<>();
+	public List<Gift> getGift() {
+		return gift;
+	}
+	public void setGift(List<Gift> gift) {
+		this.gift = gift;
+	}
 	public Laptop getLaptop() {
 		return laptop;
 	}

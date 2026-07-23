@@ -63,7 +63,7 @@ public class App
 		
 		session.createQuery("from Student where id=:a or name=:b",Student.class)
 		.setParameter("a", 12)
-		.setParameter("b", "RGPOKAAIRVKAHXY")
+		.setParameter("b", "Rajesh Jadhav")
 		.list()
 		.forEach(st->System.out.println(st));
 		
@@ -108,23 +108,23 @@ public class App
 		
 		//find Students by name contains
 		session.createQuery("from Student where name like :a",Student.class)
-		.setParameter("a","%T%")
+		.setParameter("a","%a%")
 		.list()
 		.forEach(st->System.out.println(st));
 		
 		// delete student by id
 		
 		int check = session.createQuery("delete from Student where id=:a")
-		.setParameter("a",5000)
+		.setParameter("a",50)
 		.executeUpdate();
 		System.out.println(check);
 		
 		// update student by id
-//		Student s1 = new Student();
-//		s1.setName("Shri");
-//		s1.setCity("Satara");
-//		s1.setPercentage(90.0);
-//		s1.setId(0);
+		Student s2 = new Student();
+		s2.setName("Shri");
+		s2.setCity("Satara");
+		s2.setPercentage(90.0);
+		s2.setId(0);
 		
 		int check1 = session.createQuery("update Student set name=:a,city=:b,percentage=:c where id=:d")
 		.setParameter("a", s1.getName())

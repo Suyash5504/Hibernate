@@ -5,6 +5,7 @@ import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.model.Department;
 import com.model.Gift;
 import com.model.Laptop;
 import com.model.Student;
@@ -16,6 +17,7 @@ public class HBUtils {
 			.addAnnotatedClass(Student.class)
 			.addAnnotatedClass(Laptop.class)
 			.addAnnotatedClass(Gift.class)
+			.addAnnotatedClass(Department.class)
 			.buildSessionFactory();
 
 	private static Properties p1() {

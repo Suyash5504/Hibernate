@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.model.Department;
 import com.model.Gift;
 import com.model.Student;
 import com.util.HBUtils;
@@ -90,8 +91,38 @@ public class App
 //        for(Gift g:list)
 //        	System.out.println(g);
         
-        Gift gift = session.get(Gift.class, 1);
-        System.out.println(gift.getStudent().getLaptop());
+//        Gift gift = session.get(Gift.class, 1);
+//        System.out.println(gift.getStudent().getLaptop());
+        
+//        String department[] = {"Engineering","Management","Medical Science"};
+//        
+//        for(int i=0;i<department.length;i++) {
+//        	
+//        	Department d = new Department();
+//        	d.setName(department[i]);
+//        	session.save(d);
+//        }
+        
+//        int a[]= {3,1,1,2,2,1,2,1};
+//        for(int i=0;i<a.length;i++) {
+//        	
+//        	Student s= session.get(Student.class, i+1);
+//        	Department d = session.get(Department.class, a[i]);
+//        	s.setDepartment(d);
+//        }
+        
+//        Department department = session.get(Department.class, 3);
+//        for(Student s:department.getStudents())
+//        	System.out.println(s);
+        
+//        int sum=0;
+//        Department department = session.get(Department.class, 2);
+//        for(Student s:department.getStudents())
+//        	sum+=s.getGift().size();
+//        System.out.println(sum);
+        
+//        System.out.println(session.get(Gift.class, 24).getStudent().getDepartment());
+        System.out.println(session.get(Student.class,1).getDepartment());
         tx.commit();
         session.close();
     }

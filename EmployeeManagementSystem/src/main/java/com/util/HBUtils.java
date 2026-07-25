@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.model.Achievment;
+import com.model.Certificate;
 import com.model.Employee;
 import com.model.Laptop;
 import com.model.Project;
@@ -18,6 +19,7 @@ public class HBUtils {
 			.addAnnotatedClass(Laptop.class)
 			.addAnnotatedClass(Achievment.class)
 			.addAnnotatedClass(Project.class)
+			.addAnnotatedClass(Certificate.class)
 			.buildSessionFactory();
 
 	private static Properties p1() {

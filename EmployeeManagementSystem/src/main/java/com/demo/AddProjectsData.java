@@ -50,6 +50,7 @@ public class AddProjectsData {
 			session.save(pro);
 		}
 		tx.commit();
+		session.close();
 	}
 
 }

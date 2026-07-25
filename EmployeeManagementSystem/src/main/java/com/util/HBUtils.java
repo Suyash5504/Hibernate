@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import com.model.Achievment;
 import com.model.Employee;
 import com.model.Laptop;
+import com.model.Project;
 
 public class HBUtils {
 
@@ -16,6 +17,7 @@ public class HBUtils {
 			.addAnnotatedClass(Employee.class)
 			.addAnnotatedClass(Laptop.class)
 			.addAnnotatedClass(Achievment.class)
+			.addAnnotatedClass(Project.class)
 			.buildSessionFactory();
 
 	private static Properties p1() {

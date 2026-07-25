@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Employee {
@@ -16,6 +17,14 @@ public class Employee {
 	private String company;
 	@Column(columnDefinition = "double(10,2)")
 	private double salary;
+	@OneToOne
+	private Laptop laptop;
+	public Laptop getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", designation=" + designation + ", company=" + company

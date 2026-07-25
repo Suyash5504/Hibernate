@@ -31,7 +31,7 @@ public class HBUtils {
 		p.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		p.setProperty("hibernate.formate_sql", "true");
 		p.setProperty("hibernate.hbm2ddl.auto", "update");
-		p.setProperty("hibernate.show_sql", "true");
+		p.setProperty("hibernate.show_sql", "false");
 		return p;
 	}
 }

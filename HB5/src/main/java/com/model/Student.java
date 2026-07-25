@@ -3,8 +3,10 @@ package com.model;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +15,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+@Cacheable
 @Table(name="Student_info")
 public class Student {
 	@Id
@@ -23,11 +30,11 @@ public class Student {
 	private String city;
 	@Column(columnDefinition = "double(10,2)")
 	private double percentage;
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Laptop laptop;
-	@OneToMany(mappedBy = "student")
+	@OneToMany(mappedBy = "student",fetch = FetchType.LAZY)
 	private List<Gift> gift= new LinkedList<>();
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Department department;
 	public Department getDepartment() {
 		return department;

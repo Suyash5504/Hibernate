@@ -33,9 +33,10 @@ public class HBUtils {
 		p.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		p.setProperty("hibernate.hbm2ddl.auto", "update");
 		p.setProperty("hibernate.formate_sql", "true");
-		p.setProperty("hibernate.show_sql", "false");
-		
-		
+		p.setProperty("hibernate.show_sql", "true");
+		p.setProperty("hibernate.cache.use_second_level_cache", "true");
+		p.setProperty("hibernate.cache.region.factory_class","org.hibernate.cache.ehcache.internal.EhcacheRegionFactory" );
+		p.setProperty("hibernate.cache.user_query.cache", "true");
 		return p;
 	}
 }

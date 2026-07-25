@@ -6,12 +6,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.model.Employee;
+import com.model.Laptop;
 
 public class HBUtils {
 
 	public static SessionFactory sf = new Configuration()
 			.setProperties(p1())
 			.addAnnotatedClass(Employee.class)
+			.addAnnotatedClass(Laptop.class)
 			.buildSessionFactory();
 
 	private static Properties p1() {

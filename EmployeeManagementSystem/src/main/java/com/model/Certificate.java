@@ -1,9 +1,13 @@
 package com.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Certificate {
@@ -11,6 +15,14 @@ public class Certificate {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	@ManyToMany(mappedBy = "certificates")
+	private List<Employee> employee = new LinkedList();
+	public List<Employee> getEmployee() {
+		return employee;
+	}
+	public void setEmployee(List<Employee> employee) {
+		this.employee = employee;
+	}
 	@Override
 	public String toString() {
 		return "Certificate [id=" + id + ", name=" + name + "]";

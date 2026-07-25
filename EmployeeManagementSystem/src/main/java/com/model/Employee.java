@@ -1,10 +1,16 @@
 package com.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,6 +25,30 @@ public class Employee {
 	private double salary;
 	@OneToOne
 	private Laptop laptop;
+	@OneToMany(mappedBy = "Employee")
+	private List<Achievment> achievments = new LinkedList();
+	@ManyToMany
+	private List<Project> project = new LinkedList();
+	@ManyToMany
+	private List<Certificate> certificates = new LinkedList();
+	public List<Certificate> getCertificates() {
+		return certificates;
+	}
+	public void setCertificates(List<Certificate> certificates) {
+		this.certificates = certificates;
+	}
+	public List<Project> getProject() {
+		return project;
+	}
+	public void setProject(List<Project> project) {
+		this.project = project;
+	}
+	public List<Achievment> getAchievments() {
+		return achievments;
+	}
+	public void setAchievments(List<Achievment> achievments) {
+		this.achievments = achievments;
+	}
 	public Laptop getLaptop() {
 		return laptop;
 	}

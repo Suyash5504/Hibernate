@@ -45,9 +45,9 @@ public class AddProjectsData {
 			    "E-Learning Management System"
 			};
 		for(int i=0;i<itProjects.length;i++) {
-			Project p = new Project();
-			p.setName(itProjects[i]);
-			session.save(p);
+			Project pro = new Project();
+			pro.setName(itProjects[i]);
+			session.save(pro);
 		}
 		tx.commit();
 	}

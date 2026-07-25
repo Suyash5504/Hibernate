@@ -1,8 +1,9 @@
-package com.model;
+package com.demo;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.model.Achievment;
 import com.util.HBUtils;
 
 public class AddAchievmentsData {
@@ -53,3 +54,4 @@ public class AddAchievmentsData {
 	}
 
 }
+
